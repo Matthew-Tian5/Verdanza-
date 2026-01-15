@@ -3,28 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Verdanza Tech</title>
+    <title>Verdaza Tech</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               verdanza: {
-                DEFAULT: '#4ADE80', // Primary Green
-                dark: '#22c55e',
-                glow: '#86efac',
+                DEFAULT: '#06b48b', // Primary Teal Green
+                light: '#1ad8ac',   // Gradient End 1
+                dark: '#005568',    // Gradient End 2
+                yellow: '#fefce0',  // Secondary Yellow (Cream/Highlight)
+                pink: '#c25d9d',    // Secondary Pink/Purple
+                blue: '#3f5c8e',    // Secondary Dark Blue
               },
-              charcoal: '#18181b', // Zinc 900
-              offwhite: '#f8fafc', // Slate 50
+              charcoal: '#18181b', 
+              offwhite: '#f8fafc', 
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
+              sans: ['Poppins', 'sans-serif'],
+              display: ['League Spartan', 'sans-serif'],
             },
+            backgroundImage: {
+              'gradient-primary': 'linear-gradient(to right, #06b48b, #1ad8ac)',
+              'gradient-deep': 'linear-gradient(to right, #06b48b, #005568)',
+            }
           },
         },
       }
@@ -44,11 +51,11 @@
         background: #f1f1f1;
       }
       ::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
+        background: #06b48b;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #94a3b8;
+        background: #005568;
       }
     </style>
   <script type="importmap">

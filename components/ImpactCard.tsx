@@ -18,7 +18,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
 
   return (
     <div
-      className="relative w-full h-64 bg-white/40 backdrop-blur-md rounded-2xl border border-white/50 shadow-lg overflow-hidden cursor-pointer group"
+      className="relative w-full h-64 bg-white/60 backdrop-blur-md rounded-2xl border border-verdanza/10 shadow-lg overflow-hidden cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -32,7 +32,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
           <h3 className="text-xl font-display font-bold text-charcoal mb-2">{title}</h3>
           <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
         </div>
-        <div className="text-4xl font-bold text-verdanza-dark tracking-tighter">
+        <div className="text-4xl font-bold text-verdanza tracking-tighter font-display">
           {value}
         </div>
       </motion.div>
@@ -61,7 +61,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
               cx="60"
               cy="60"
               r={radius}
-              stroke="#4ADE80"
+              stroke="#06b48b"
               strokeWidth="8"
               fill="transparent"
               strokeLinecap="round"
@@ -77,7 +77,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: isHovered ? 1 : 0.8, opacity: isHovered ? 1 : 0 }}
             transition={{ delay: 0.2 }}
-            className="absolute text-charcoal font-bold text-lg"
+            className="absolute text-charcoal font-bold text-lg font-display"
           >
             {percentage}%
           </motion.div>

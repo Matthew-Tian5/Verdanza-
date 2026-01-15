@@ -44,7 +44,7 @@ const EmailSidebar: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '100%', opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 right-0 top-0 md:top-auto md:bottom-8 md:right-8 w-full md:w-96 h-full md:h-auto z-[70] bg-white/90 backdrop-blur-xl border border-gray-200/50 md:rounded-2xl shadow-2xl p-8 flex flex-col justify-center md:block"
+            className="fixed bottom-0 right-0 top-0 md:top-auto md:bottom-8 md:right-8 w-full md:w-96 h-full md:h-auto z-[70] bg-white/80 backdrop-blur-2xl border border-white/40 md:rounded-2xl shadow-2xl p-8 flex flex-col justify-center md:block supports-[backdrop-filter]:bg-white/60"
           >
             <button
               onClick={() => setIsVisible(false)}
@@ -67,7 +67,7 @@ const EmailSidebar: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-green-50 rounded-xl text-green-700 flex items-center gap-3"
+                  className="p-4 bg-verdanza/10 rounded-xl text-verdanza-dark flex items-center gap-3"
                 >
                   <Check size={20} />
                   <span className="font-medium">Thanks for subscribing!</span>
@@ -80,11 +80,11 @@ const EmailSidebar: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-verdanza/50 focus:border-verdanza transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white/50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-verdanza/50 focus:border-verdanza transition-all backdrop-blur-sm"
                   />
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-xl bg-charcoal text-white font-medium hover:bg-black transition-all flex items-center justify-center gap-2 group"
+                    className="w-full py-3 rounded-xl bg-gradient-to-b from-[#1ad8ac] to-[#06b48b] text-white font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_10px_rgba(6,180,139,0.3)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_6px_15px_rgba(6,180,139,0.4)] transition-all flex items-center justify-center gap-2 group border border-[#06b48b]/20 hover:-translate-y-0.5"
                   >
                     Subscribe
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

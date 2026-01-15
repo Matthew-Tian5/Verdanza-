@@ -33,12 +33,18 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4 backdrop-blur-md bg-white/70 border-b border-gray-200/50 shadow-sm' : 'py-6 bg-transparent'
+        isScrolled 
+          ? 'py-4 backdrop-blur-xl bg-white/60 border-b border-white/40 shadow-lg shadow-verdanza/5' 
+          : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <NavLink to="/" className="text-2xl font-display font-bold tracking-tight text-charcoal flex items-center gap-1 group">
-          <span className="text-verdanza group-hover:text-verdanza-dark transition-colors">V</span>erdanza Tech
+        <NavLink to="/" className="flex items-center gap-1 group">
+          <img 
+            src="https://via.placeholder.com/200x80?text=Verdaza+Tech+Logo" 
+            alt="Verdaza Tech" 
+            className="h-10 w-auto object-contain"
+          />
         </NavLink>
 
         {/* Desktop Nav */}
@@ -48,7 +54,7 @@ const Navbar: React.FC = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-verdanza-dark ${
+                `text-sm font-medium transition-colors hover:text-verdanza ${
                   isActive ? 'text-verdanza font-semibold' : 'text-gray-600'
                 }`
               }
@@ -58,7 +64,7 @@ const Navbar: React.FC = () => {
           ))}
           <NavLink
              to="/contact"
-             className="px-5 py-2.5 rounded-2xl bg-charcoal text-white text-sm font-medium hover:bg-black transition-colors shadow-lg shadow-verdanza/20"
+             className="px-6 py-2.5 rounded-full bg-gradient-to-b from-[#1ad8ac] to-[#06b48b] text-white text-sm font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_10px_rgba(6,180,139,0.3)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_6px_15px_rgba(6,180,139,0.4)] hover:-translate-y-0.5 transition-all border border-[#06b48b]/20"
           >
             Get Started
           </NavLink>
@@ -80,7 +86,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-lg border-b border-gray-100 overflow-hidden"
+            className="md:hidden bg-white/90 backdrop-blur-xl border-b border-white/50 overflow-hidden shadow-xl"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
