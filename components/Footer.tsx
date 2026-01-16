@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
           <img 
-            src="https://via.placeholder.com/200x80?text=Verdaza+Tech+Logo" 
+            src="/images/Verdanza logo clear.png" 
             alt="Verdaza Tech" 
             className="h-10 w-auto mb-6 opacity-80"
           />
