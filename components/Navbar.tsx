@@ -41,9 +41,9 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <NavLink to="/" className="flex items-center gap-1 group">
           <img 
-            src="https://via.placeholder.com/200x80?text=Verdaza+Tech+Logo" 
+            src="/images/Copy of Verdanza Tech Logo.png" 
             alt="Verdaza Tech" 
-            className="h-10 w-auto object-contain"
+            className="h-25 w-auto object-contain"
           />
         </NavLink>
 
