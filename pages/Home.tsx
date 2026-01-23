@@ -95,7 +95,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
-              className="text-xl md:text-2xl text-black max-w-2xl mb-10 leading-relaxed font-light"
+              className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light"
             >
               We bridge the gap between technology and nature. Our Sustain Platform empowers households and schools to reduce waste intelligently.
             </motion.p>
@@ -214,16 +214,16 @@ const Home: React.FC = () => {
           </div>
 
           {/* App Features Subsection */}
-          <div className="bg-gradient-deep text-white rounded-[3rem] p-8 md:p-16 overflow-hidden relative shadow-2xl">
+          <div className="bg-gradient-deep text-white rounded-[3rem] p-6 md:p-12 overflow-hidden relative shadow-2xl">
             {/* Glossy overlay on card */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-verdanza-light/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
             <div className="relative z-10">
-              <h3 className="text-4xl font-display font-bold mb-12 text-center md:text-left">App Features</h3>
+              <h3 className="text-4xl font-display font-bold mb-8 text-center md:text-left">App Features</h3>
               
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-12 mb-8">
                 <div>
                    <div className="flex items-center gap-3 mb-4 text-verdanza-yellow">
                      <Target />
@@ -254,6 +254,15 @@ const Home: React.FC = () => {
                      </li>
                    </ul>
                 </div>
+              </div>
+              
+              <div className="flex justify-center md:justify-start">
+                <Link
+                  to="/waitlist"
+                  className="px-8 py-3 rounded-full bg-white text-verdanza font-bold hover:bg-gray-100 transition-all hover:-translate-y-0.5 shadow-lg"
+                >
+                  Join the Waitlist
+                </Link>
               </div>
             </div>
           </div>
