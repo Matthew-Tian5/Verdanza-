@@ -26,14 +26,16 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
       <motion.div
         animate={{ opacity: isHovered ? 0.3 : 1, filter: isHovered ? 'blur(2px)' : 'blur(0px)' }}
         transition={{ duration: 0.3 }}
-        className="absolute inset-0 p-8 flex flex-col justify-between"
+        className="absolute inset-0 p-8 flex flex-col justify-between h-full"
       >
-        <div>
+        <div className="flex-1">
           <h3 className="text-2xl font-display font-bold text-charcoal mb-2">{title}</h3>
           <p className="text-gray-500 text-base leading-relaxed">{description}</p>
         </div>
-        <div className="text-4xl font-bold text-verdanza tracking-tighter font-display">
-          {value}
+        <div className="h-12 flex items-end">
+          <div className="text-4xl font-bold text-verdanza tracking-tighter font-display leading-none">
+            {value}
+          </div>
         </div>
       </motion.div>
 

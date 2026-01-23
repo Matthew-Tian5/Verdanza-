@@ -95,7 +95,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light"
+              className="text-xl md:text-2xl text-darkgray-600 max-w-2xl mb-10 leading-relaxed font-light"
             >
               We bridge the gap between technology and nature. Our Sustain Platform empowers households and schools to reduce waste intelligently.
             </motion.p>
