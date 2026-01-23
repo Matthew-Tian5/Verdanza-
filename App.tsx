@@ -14,6 +14,7 @@ import EmailSidebar from './components/EmailSidebar';
 import Home from './pages/Home';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import Waitlist from './pages/Waitlist';
 import backgroundImage from './images/Opening Background.jpg';
 
 const ScrollToTop = () => {
@@ -113,6 +114,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/waitlist" element={<Waitlist />} />
           </Routes>
         </main>
 
