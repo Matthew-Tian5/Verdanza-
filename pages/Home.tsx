@@ -296,6 +296,15 @@ const Home: React.FC = () => {
            </div>
         </div>
       </section>
+
+
+      <section className="py-24 bg-verdanza-yellow/30">
+        <div className="max-w-7xl mx-auto px-6">
+           <h2 className="text-5xl font-display font-bold text-charcoal mb-12 text-center">Our Partners</h2>
+           
+          
+        </div>
+      </section>
     </div>
   );
 };
