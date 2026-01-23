@@ -18,7 +18,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
 
   return (
     <div
-      className="relative w-full h-64 bg-white/60 backdrop-blur-md rounded-2xl border border-verdanza/10 shadow-lg overflow-hidden cursor-pointer group"
+      className="relative w-full h-48 bg-white/60 backdrop-blur-md rounded-2xl border border-verdanza/10 shadow-lg overflow-hidden cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
