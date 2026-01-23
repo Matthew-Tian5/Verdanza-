@@ -6,13 +6,13 @@ const teamMembers = [
     name: "Urvi Budhiraja",
     role: "Founder, CEO",
     quote: "We are creating long-term, sustainable change by transforming how individuals and families perceive, manage, and value food.",
-    image: "https://via.placeholder.com/600x400?text=Urvi+Budhiraja" 
+    image: "/images/Urvi.JPG" 
   },
   {
     name: "Helen Sue",
     role: "Co-Founder, COO",
     quote: "By engaging children early, we help extend impact beyond the classroom and into households and communities.",
-    image: "https://via.placeholder.com/600x400?text=Helen+Sue" 
+    image: "/images/HELEN.jpeg" 
   }
 ];
 
