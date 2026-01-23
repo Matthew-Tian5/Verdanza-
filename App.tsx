@@ -6,6 +6,7 @@ import EmailSidebar from './components/EmailSidebar';
 import Home from './pages/Home';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import backgroundImage from './images/Opening Background.jpg';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -19,6 +20,12 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      
+      {/* Background Image Layer */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      />
       
       {/* UI Layer - Z-index 10 to sit above background */}
       <div className="relative z-10 min-h-screen flex flex-col font-sans text-charcoal selection:bg-verdanza selection:text-charcoal">

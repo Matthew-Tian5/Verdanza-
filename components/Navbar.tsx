@@ -34,8 +34,8 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-4 backdrop-blur-xl bg-white/60 border-b border-white/40 shadow-lg shadow-verdanza/5' 
-          : 'py-6 bg-transparent'
+          ? 'py-4 backdrop-blur-xl bg-white/70 border-b border-white/40 shadow-lg shadow-verdanza/5' 
+          : 'py-6 bg-white/50 backdrop-blur-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
