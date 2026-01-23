@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         </div>
         <div>
           <h4 className="font-bold mb-4 font-display text-verdanza">Platform</h4>
-          <ul className="space-y-2 text-gray-400 text-sm font-light">
+          <ul className="space-y-2 text-gray-400 text-base font-light">
             <li><a href="#" className="hover:text-verdanza-light transition-colors">Sustain AI</a></li>
             <li><a href="#" className="hover:text-verdanza-light transition-colors">Plate Patrol</a></li>
             <li><a href="#" className="hover:text-verdanza-light transition-colors">Analytics</a></li>
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm font-light">
+      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-base font-light">
         © {new Date().getFullYear()} Verdaza Tech. All rights reserved.
       </div>
     </footer>

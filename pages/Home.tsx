@@ -44,7 +44,7 @@ const Home: React.FC = () => {
             className="max-w-4xl"
           >
             <motion.div variants={itemVariants} className="flex items-center gap-2 mb-6">
-              <span className="px-3 py-1 rounded-full bg-verdanza-yellow text-verdanza-dark text-xs font-bold uppercase tracking-wider border border-verdanza/20 shadow-sm">
+              <span className="px-3 py-1 rounded-full bg-verdanza-yellow text-verdanza-dark text-sm font-bold uppercase tracking-wider border border-verdanza/20 shadow-sm">
                 Next Gen Sustainability
               </span>
             </motion.div>
@@ -95,7 +95,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
-              className="text-lg md:text-xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light"
+              className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light"
             >
               We bridge the gap between technology and nature. Our Sustain Platform empowers households and schools to reduce waste intelligently.
             </motion.p>
@@ -130,8 +130,8 @@ const Home: React.FC = () => {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-12">
-            <h2 className="text-4xl font-display font-bold text-charcoal mb-6">The Problem</h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-4xl">
+            <h2 className="text-5xl font-display font-bold text-charcoal mb-6">The Problem</h2>
+            <p className="text-gray-600 text-xl leading-relaxed max-w-4xl">
               Food waste is a pressing issue, with households in Canada contributing to over 60% of total food waste. 
               This not only has significant economic consequences but also exacerbates environmental issues such as greenhouse gas emissions and resource depletion. 
               Many families lack awareness or practical solutions to minimize waste effectively.
@@ -173,7 +173,7 @@ const Home: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold text-charcoal mb-4">Our Solution</h2>
+            <h2 className="text-5xl font-display font-bold text-charcoal mb-4">Our Solution</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Verdaza Tech addresses food waste through a multi-faceted approach.
             </p>
@@ -184,7 +184,7 @@ const Home: React.FC = () => {
                 <div className="w-14 h-14 bg-verdanza-light/20 rounded-full flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
                   <Smartphone size={28} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-charcoal mb-3">AI-Powered App</h3>
+                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">AI-Powered App</h3>
                 <p className="text-gray-600">A mobile and web-based platform designed to track food consumption, provide waste reduction tips, and incentivize sustainable behaviors. It leverages AI to personalize recommendations.</p>
              </div>
              
@@ -192,7 +192,7 @@ const Home: React.FC = () => {
                 <div className="w-14 h-14 bg-verdanza-pink/20 rounded-full flex items-center justify-center text-verdanza-pink mb-4 group-hover:scale-110 transition-transform">
                   <Target size={28} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-charcoal mb-3">Behavioral Change Strategies</h3>
+                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Behavioral Change Strategies</h3>
                 <p className="text-gray-600">Targeting behavioral shifts, particularly among children, to instill lifelong habits of mindful consumption and waste reduction.</p>
              </div>
 
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
                 <div className="w-14 h-14 bg-verdanza-blue/20 rounded-full flex items-center justify-center text-verdanza-blue mb-4 group-hover:scale-110 transition-transform">
                   <Users size={28} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-charcoal mb-3">Educational Workshops</h3>
+                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Educational Workshops</h3>
                 <p className="text-gray-600">We conduct interactive workshops in schools and community centers to raise awareness and provide actionable strategies for food waste reduction.</p>
              </div>
 
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
                 <div className="w-14 h-14 bg-verdanza-yellow rounded-full flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
                   <Database size={28} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-charcoal mb-3">Data-Driven Insights</h3>
+                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Data-Driven Insights</h3>
                 <p className="text-gray-600">By analyzing user data, we offer customized solutions to help households reduce waste and save money effectively.</p>
              </div>
           </div>
@@ -221,13 +221,13 @@ const Home: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-verdanza-light/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             
             <div className="relative z-10">
-              <h3 className="text-3xl font-display font-bold mb-12 text-center md:text-left">App Features</h3>
+              <h3 className="text-4xl font-display font-bold mb-12 text-center md:text-left">App Features</h3>
               
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
                    <div className="flex items-center gap-3 mb-4 text-verdanza-yellow">
                      <Target />
-                     <h4 className="text-xl font-bold font-display">Personalized Recommendations</h4>
+                     <h4 className="text-2xl font-bold font-display">Personalized Recommendations</h4>
                    </div>
                    <p className="text-gray-100 mb-6 font-light">
                      Use AI to understand user consumption habits and offer personalized tips. Suggestions include meal planning, optimal storage methods, or recipes based on leftover ingredients.
@@ -237,7 +237,7 @@ const Home: React.FC = () => {
                 <div>
                    <div className="flex items-center gap-3 mb-4 text-verdanza-yellow">
                      <ShoppingCart />
-                     <h4 className="text-xl font-bold font-display">Grocery Integration</h4>
+                     <h4 className="text-2xl font-bold font-display">Grocery Integration</h4>
                    </div>
                    <ul className="space-y-4 text-gray-100 font-light">
                      <li className="flex gap-2">
@@ -263,7 +263,7 @@ const Home: React.FC = () => {
       {/* Impact Goals SDGs */}
       <section className="py-24 bg-verdanza-yellow/30">
         <div className="max-w-7xl mx-auto px-6">
-           <h2 className="text-4xl font-display font-bold text-charcoal mb-12 text-center">Our Impact Goals</h2>
+           <h2 className="text-5xl font-display font-bold text-charcoal mb-12 text-center">Our Impact Goals</h2>
            <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
              Verdaza Tech aligns with the United Nations Sustainable Development Goals (SDGs) to create a meaningful impact.
            </p>

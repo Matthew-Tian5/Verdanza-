@@ -30,9 +30,9 @@ const Team: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-display font-bold text-charcoal mb-8">Who We Are</h1>
+          <h1 className="text-6xl font-display font-bold text-charcoal mb-8">Who We Are</h1>
           
-          <div className="max-w-4xl mx-auto text-left space-y-6 text-gray-600 text-lg leading-relaxed bg-white/70 p-8 rounded-3xl backdrop-blur-md border border-verdanza/10 shadow-sm relative overflow-hidden">
+          <div className="max-w-4xl mx-auto text-left space-y-6 text-gray-600 text-xl leading-relaxed bg-white/70 p-8 rounded-3xl backdrop-blur-md border border-verdanza/10 shadow-sm relative overflow-hidden">
              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-deep" />
             <p>
               Verdaza Tech is an Ontario-based enterprise dedicated to reducing household food waste through data-driven insights, behavioral incentives, and education. Co-founded by Urvi and Helen, our mission is to create long-term, sustainable change by transforming how individuals and families perceive, manage, and value food in their homes.
@@ -75,8 +75,8 @@ const Team: React.FC = () => {
                 </div>
                 <div className="p-8 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold font-display text-charcoal">{member.name}</h3>
-                    <p className="text-verdanza font-medium text-sm mb-4 uppercase tracking-wide">{member.role}</p>
+                    <h3 className="text-3xl font-bold font-display text-charcoal">{member.name}</h3>
+                    <p className="text-verdanza font-medium text-base mb-4 uppercase tracking-wide">{member.role}</p>
                   </div>
                   <blockquote className="text-gray-600 italic border-l-4 border-verdanza-light pl-4 py-1">
                     "{member.quote}"

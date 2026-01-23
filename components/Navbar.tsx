@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-verdanza ${
+                `text-base font-medium transition-colors hover:text-verdanza ${
                   isActive ? 'text-verdanza font-semibold' : 'text-gray-600'
                 }`
               }
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
           ))}
           <NavLink
              to="/contact"
-             className="px-6 py-2.5 rounded-full bg-gradient-to-b from-[#1ad8ac] to-[#06b48b] text-white text-sm font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_10px_rgba(6,180,139,0.3)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_6px_15px_rgba(6,180,139,0.4)] hover:-translate-y-0.5 transition-all border border-[#06b48b]/20"
+             className="px-6 py-2.5 rounded-full bg-gradient-to-b from-[#1ad8ac] to-[#06b48b] text-white text-base font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_10px_rgba(6,180,139,0.3)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_6px_15px_rgba(6,180,139,0.4)] hover:-translate-y-0.5 transition-all border border-[#06b48b]/20"
           >
             Get Started
           </NavLink>
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `text-lg font-medium ${isActive ? 'text-verdanza' : 'text-gray-600'}`
+                    `text-xl font-medium ${isActive ? 'text-verdanza' : 'text-gray-600'}`
                   }
                 >
                   {link.name}

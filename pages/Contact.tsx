@@ -34,8 +34,8 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl font-display font-bold text-charcoal mb-6">Contact Us</h1>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed font-light">
+            <h1 className="text-6xl font-display font-bold text-charcoal mb-6">Contact Us</h1>
+            <p className="text-2xl text-gray-600 mb-10 leading-relaxed font-light">
               Have questions? We'd love to hear from you.
             </p>
 
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
                   <Mail />
                 </div>
                 <div>
-                  <h3 className="font-bold font-display text-charcoal text-lg">Email Us</h3>
+                  <h3 className="font-bold font-display text-charcoal text-xl">Email Us</h3>
                   <p className="text-gray-500">verdanzatech@gmail.com</p>
                 </div>
               </div>
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
                   <Phone />
                 </div>
                 <div>
-                  <h3 className="font-bold font-display text-charcoal text-lg">Call Us</h3>
+                  <h3 className="font-bold font-display text-charcoal text-xl">Call Us</h3>
                   <p className="text-gray-500">+1 (647) 871-6709</p>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
 
             {/* Socials */}
             <div>
-              <h3 className="font-bold font-display text-charcoal text-lg mb-4">Follow Us</h3>
+              <h3 className="font-bold font-display text-charcoal text-xl mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 rounded-full bg-charcoal text-white flex items-center justify-center hover:bg-verdanza hover:text-white transition-colors shadow-lg hover:shadow-verdanza/30">
                   <Linkedin size={20} />
@@ -82,10 +82,10 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl shadow-verdanza/5 border border-white/50"
           >
-            <h2 className="text-2xl font-bold font-display text-charcoal mb-6">Join Us</h2>
+            <h2 className="text-3xl font-bold font-display text-charcoal mb-6">Join Us</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-bold text-charcoal uppercase tracking-wider">Name</label>
+                <label htmlFor="name" className="text-base font-bold text-charcoal uppercase tracking-wider">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold text-charcoal uppercase tracking-wider">Email</label>
+                  <label htmlFor="email" className="text-base font-bold text-charcoal uppercase tracking-wider">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-bold text-charcoal uppercase tracking-wider">Phone Number</label>
+                  <label htmlFor="phone" className="text-base font-bold text-charcoal uppercase tracking-wider">Phone Number</label>
                   <input
                     type="tel"
                     id="phone"
@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-bold text-charcoal uppercase tracking-wider">Topic</label>
+                <label htmlFor="subject" className="text-base font-bold text-charcoal uppercase tracking-wider">Topic</label>
                 <select
                   id="subject"
                   name="subject"
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-charcoal uppercase tracking-wider">Message</label>
+                <label htmlFor="message" className="text-base font-bold text-charcoal uppercase tracking-wider">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-b from-[#1ad8ac] to-[#06b48b] text-white font-bold text-lg hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_6px_15px_rgba(6,180,139,0.4)] transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_10px_rgba(6,180,139,0.3)] flex items-center justify-center gap-2 group border border-[#06b48b]/20 hover:-translate-y-0.5"
+                className="w-full py-4 rounded-xl bg-gradient-to-b from-[#1ad8ac] to-[#06b48b] text-white font-bold text-xl hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_6px_15px_rgba(6,180,139,0.4)] transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_10px_rgba(6,180,139,0.3)] flex items-center justify-center gap-2 group border border-[#06b48b]/20 hover:-translate-y-0.5"
               >
                 Send Message
                 <Send size={20} className="group-hover:translate-x-1 transition-transform" />

@@ -29,8 +29,8 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
         className="absolute inset-0 p-8 flex flex-col justify-between"
       >
         <div>
-          <h3 className="text-xl font-display font-bold text-charcoal mb-2">{title}</h3>
-          <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+          <h3 className="text-2xl font-display font-bold text-charcoal mb-2">{title}</h3>
+          <p className="text-gray-500 text-base leading-relaxed">{description}</p>
         </div>
         <div className="text-4xl font-bold text-verdanza tracking-tighter font-display">
           {value}
@@ -77,7 +77,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({ title, value, description, perc
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: isHovered ? 1 : 0.8, opacity: isHovered ? 1 : 0 }}
             transition={{ delay: 0.2 }}
-            className="absolute text-charcoal font-bold text-lg font-display"
+            className="absolute text-charcoal font-bold text-xl font-display"
           >
             {percentage}%
           </motion.div>

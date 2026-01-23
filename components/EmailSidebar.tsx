@@ -58,8 +58,8 @@ const EmailSidebar: React.FC = () => {
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 4 5l10-10 10 10s2 2 2 4.5V17z"></path></svg>
               </div>
               
-              <h3 className="text-2xl font-display font-bold text-charcoal">Join the Movement</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="text-3xl font-display font-bold text-charcoal">Join the Movement</h3>
+              <p className="text-gray-600 text-base leading-relaxed">
                 Stay updated with the latest in sustainable AI technology and our Plate Patrol initiatives.
               </p>
 
