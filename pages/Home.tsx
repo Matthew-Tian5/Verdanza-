@@ -95,7 +95,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light"
+              className="text-xl md:text-2xl text-black max-w-2xl mb-10 leading-relaxed font-light"
             >
               We bridge the gap between technology and nature. Our Sustain Platform empowers households and schools to reduce waste intelligently.
             </motion.p>
@@ -181,8 +181,7 @@ const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-8 mb-20">
              <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                {/* Changed rounded-full to rounded-2xl */}
-                <div className="w-14 h-14 bg-verdanza-light/20 rounded-2xl flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-verdanza-light/20 rounded-full flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
                   <Smartphone size={28} />
                 </div>
                 <h3 className="text-3xl font-display font-bold text-charcoal mb-3">AI-Powered App</h3>
@@ -190,8 +189,7 @@ const Home: React.FC = () => {
              </div>
              
              <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                {/* Changed rounded-full to rounded-2xl */}
-                <div className="w-14 h-14 bg-verdanza-pink/20 rounded-2xl flex items-center justify-center text-verdanza-pink mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-verdanza-pink/20 rounded-full flex items-center justify-center text-verdanza-pink mb-4 group-hover:scale-110 transition-transform">
                   <Target size={28} />
                 </div>
                 <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Behavioral Change Strategies</h3>
@@ -199,8 +197,7 @@ const Home: React.FC = () => {
              </div>
 
              <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                {/* Changed rounded-full to rounded-2xl */}
-                <div className="w-14 h-14 bg-verdanza-blue/20 rounded-2xl flex items-center justify-center text-verdanza-blue mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-verdanza-blue/20 rounded-full flex items-center justify-center text-verdanza-blue mb-4 group-hover:scale-110 transition-transform">
                   <Users size={28} />
                 </div>
                 <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Educational Workshops</h3>
@@ -208,8 +205,7 @@ const Home: React.FC = () => {
              </div>
 
              <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                {/* Changed rounded-full to rounded-2xl */}
-                <div className="w-14 h-14 bg-verdanza-yellow rounded-2xl flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-verdanza-yellow rounded-full flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
                   <Database size={28} />
                 </div>
                 <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Data-Driven Insights</h3>
@@ -309,21 +305,19 @@ const Home: React.FC = () => {
            <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
              {/* Partner 1: Zero Hunger */}
              <div className="flex flex-col items-center text-center group">
-                {/* Removed padding (p-6) and changed object-contain to object-cover */}
-                <div className="w-40 h-40 bg-white rounded-3xl shadow-lg shadow-verdanza/5 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:-translate-y-2 border border-white/60 overflow-hidden">
+                <div className="w-40 h-40 bg-white rounded-full shadow-lg shadow-verdanza/5 flex items-center justify-center p-2 mb-6 transition-transform duration-300 group-hover:-translate-y-2 border border-white/60 overflow-hidden">
                   <img 
                     src="/images/ZeroHunger.jpg" 
                     alt="Zero Hunger" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <p className="text-gray-600 font-light">zero hunger description</p>
+                <p className="text-gray-600 font-light">placeholder description</p>
              </div>
 
              {/* Partner 2: Placeholder */}
              <div className="flex flex-col items-center text-center group">
-                {/* Changed rounded-full to rounded-3xl */}
-                <div className="w-40 h-40 bg-white/50 rounded-3xl shadow-sm flex items-center justify-center p-6 mb-6 transition-transform duration-300 group-hover:-translate-y-2 border-2 border-dashed border-gray-300">
+                <div className="w-40 h-40 bg-white/50 rounded-full shadow-sm flex items-center justify-center p-6 mb-6 transition-transform duration-300 group-hover:-translate-y-2 border-2 border-dashed border-gray-300">
                   <span className="text-gray-400 font-display font-bold">Partner 2</span>
                 </div>
                 <p className="text-gray-600 font-light">placeholder description</p>
@@ -331,8 +325,7 @@ const Home: React.FC = () => {
 
              {/* Partner 3: Placeholder */}
              <div className="flex flex-col items-center text-center group">
-                {/* Changed rounded-full to rounded-3xl */}
-                <div className="w-40 h-40 bg-white/50 rounded-3xl shadow-sm flex items-center justify-center p-6 mb-6 transition-transform duration-300 group-hover:-translate-y-2 border-2 border-dashed border-gray-300">
+                <div className="w-40 h-40 bg-white/50 rounded-full shadow-sm flex items-center justify-center p-6 mb-6 transition-transform duration-300 group-hover:-translate-y-2 border-2 border-dashed border-gray-300">
                   <span className="text-gray-400 font-display font-bold">Partner 3</span>
                 </div>
                 <p className="text-gray-600 font-light">placeholder description</p>

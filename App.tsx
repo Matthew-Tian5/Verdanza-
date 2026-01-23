@@ -25,8 +25,12 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App: React.FC = () => {
-  // --- 1. Scroll Animations (Kept from your code) ---
+// Extracted Background Component to use Router Context
+const BackgroundLayers: React.FC = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
+  // --- Animation Hooks (Moved from App) ---
   const { scrollY } = useScroll();
 
   // Parallax: Background moves down slightly (0px to 200px)
@@ -42,68 +46,69 @@ const App: React.FC = () => {
   // Opacity: The white overlay gets stronger (0.4 to 1)
   const overlayOpacity = useTransform(scrollY, [0, 600], [0.4, 1]);
 
-  // --- 2. Entrance "Ripple" Animation ---
-  // Start at -20% to ensure the screen is FULLY white (solid) initially.
-  // The hole won't appear until this value crosses 0%.
+  // --- Entrance "Ripple" Animation ---
   const revealPercentage = useMotionValue(-20);
 
   useEffect(() => {
-    // Animate from -20% (Solid White) to 150% (Full Forest)
-    const enterAnimation = animate(revealPercentage, 150, {
-      duration: 4,          // Slow transition
-      ease: "easeInOut",
-      delay: 1.5,           // Wait for text/content to load
-    });
-    
-    return () => enterAnimation.stop();
-  }, [revealPercentage]);
+    // Only run the entrance animation if we are on the home page
+    if (isHome) {
+      const enterAnimation = animate(revealPercentage, 150, {
+        duration: 4,          
+        ease: "easeInOut",
+        delay: 1.5,           
+      });
+      return () => enterAnimation.stop();
+    }
+  }, [revealPercentage, isHome]);
 
-  // The Mask Logic:
-  // - transparent: Defines the "Hole" (Reveals the Forest underneath)
-  // - black: Defines the "Solid" part (Shows the White layer)
-  // By animating from -20%, the 'transparent' part is technically "off-screen" initially, 
-  // leaving the mask fully black (opaque/visible).
   const maskImage = useMotionTemplate`radial-gradient(circle at center, transparent ${revealPercentage}%, black calc(${revealPercentage}% + 20%))`;
 
+  return (
+    <div className="fixed inset-0 z-0 overflow-hidden bg-white">
+      {/* Only render the complex forest background on Home */}
+      {isHome && (
+        <>
+          {/* 1. The Dynamic Forest Layer (Bottom) */}
+          <motion.div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              y,      
+              scale,  
+              filter  
+            }}
+          />
+          
+          {/* 2. The Loading White Ripple Layer (Middle) */}
+          <motion.div
+            className="absolute inset-0 bg-white z-10 pointer-events-none"
+            style={{ 
+              maskImage,
+              WebkitMaskImage: maskImage // Required for Safari
+            }}
+          />
+          
+          {/* 3. The Scroll Overlay (Top) */}
+          <motion.div 
+            className="absolute inset-0 bg-white z-20"
+            style={{ opacity: overlayOpacity }}
+          />
+          
+          {/* 4. Brand Gradient Tint (Overlay) */}
+          <div className="absolute inset-0 z-20 bg-gradient-to-br from-verdanza/10 via-transparent to-verdanza-blue/5 pointer-events-none" />
+        </>
+      )}
+    </div>
+  );
+};
+
+const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
       
-      {/* Background Layer Group */}
-      <div className="fixed inset-0 z-0 overflow-hidden bg-white">
-        
-        {/* 1. The Dynamic Forest Layer (Bottom) */}
-        {/* This layer has your original blur/scale/parallax effects */}
-        <motion.div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: `url(${backgroundImage})`,
-            y,      
-            scale,  
-            filter  
-          }}
-        />
-        
-        {/* 2. The Loading White Ripple Layer (Middle) */}
-        {/* Sits ON TOP of the forest. The mask cuts a hole in it. */}
-        <motion.div
-          className="absolute inset-0 bg-white z-10 pointer-events-none"
-          style={{ 
-            maskImage,
-            WebkitMaskImage: maskImage // Required for Safari
-          }}
-        />
-        
-        {/* 3. The Scroll Overlay (Top) */}
-        {/* Fades in white as you scroll down */}
-        <motion.div 
-          className="absolute inset-0 bg-white z-20"
-          style={{ opacity: overlayOpacity }}
-        />
-        
-        {/* 4. Brand Gradient Tint (Overlay) */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-br from-verdanza/10 via-transparent to-verdanza-blue/5 pointer-events-none" />
-      </div>
+      {/* Background Logic handles visibility based on route */}
+      <BackgroundLayers />
       
       {/* UI Layer */}
       <div className="relative z-30 min-h-screen flex flex-col font-sans text-charcoal selection:bg-verdanza selection:text-charcoal">
