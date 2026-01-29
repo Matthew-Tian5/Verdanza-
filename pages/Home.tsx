@@ -91,11 +91,12 @@ const Home: React.FC = () => {
               </motion.span>
             </h1>
             
+            {/* UPDATED: Changed text color to black and weight to medium for visibility */}
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-10 leading-relaxed font-light"
+              className="text-xl md:text-2xl text-black max-w-2xl mb-10 leading-relaxed font-medium"
             >
               We bridge the gap between technology and nature. Our Sustain Platform empowers households and schools to reduce waste intelligently.
             </motion.p>
@@ -180,37 +181,58 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-20">
-             <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-verdanza-light/20 rounded-full flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
-                  <Smartphone size={28} />
+            {/* Box 1 */}
+            <Link to="/solution-1" className="group w-full">
+              <motion.div 
+                whileHover={{ scale: 1.02, translateY: -5 }}
+                transition={{ duration: 0.3 }}
+                className="h-[600px] p-8 bg-white/80 backdrop-blur-md rounded-[3rem] shadow-lg border border-white/60 flex flex-col items-center justify-center text-center hover:shadow-2xl hover:shadow-verdanza/20 relative overflow-hidden cursor-pointer"
+              >
+                {/* Visual cue: gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-verdanza to-verdanza-light" />
+                
+                <div className="relative z-10 flex flex-col items-center h-full justify-center">
+                    <h3 className="text-5xl font-display font-bold text-charcoal mb-6 group-hover:text-verdanza transition-colors">Solution One</h3>
+                    <p className="text-gray-600 text-xl leading-relaxed max-w-sm mb-8">
+                      This is a placeholder description for the first solution. Click here to read the full details.
+                    </p>
+                    
+                    {/* Call to action cue */}
+                    <div className="mt-auto flex items-center gap-2 text-verdanza font-bold text-lg opacity-80 group-hover:opacity-100 group-hover:gap-4 transition-all">
+                        <span>Learn More</span>
+                        <ArrowRight size={24} />
+                    </div>
                 </div>
-                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">AI-Powered App</h3>
-                <p className="text-gray-600">A mobile and web-based platform designed to track food consumption, provide waste reduction tips, and incentivize sustainable behaviors. It leverages AI to personalize recommendations.</p>
-             </div>
-             
-             <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-verdanza-pink/20 rounded-full flex items-center justify-center text-verdanza-pink mb-4 group-hover:scale-110 transition-transform">
-                  <Target size={28} />
-                </div>
-                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Behavioral Change Strategies</h3>
-                <p className="text-gray-600">Targeting behavioral shifts, particularly among children, to instill lifelong habits of mindful consumption and waste reduction.</p>
-             </div>
+              </motion.div>
+            </Link>
 
-             <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-verdanza-blue/20 rounded-full flex items-center justify-center text-verdanza-blue mb-4 group-hover:scale-110 transition-transform">
-                  <Users size={28} />
-                </div>
-                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Educational Workshops</h3>
-                <p className="text-gray-600">We conduct interactive workshops in schools and community centers to raise awareness and provide actionable strategies for food waste reduction.</p>
-             </div>
+            {/* Box 2 */}
+            <Link to="/solution-2" className="group w-full">
+               <motion.div 
+                whileHover={{ scale: 1.02, translateY: -5 }}
+                transition={{ duration: 0.3 }}
+                className="h-[600px] p-8 bg-white/80 backdrop-blur-md rounded-[3rem] shadow-lg border border-white/60 flex flex-col items-center justify-center text-center hover:shadow-2xl hover:shadow-verdanza-blue/20 relative overflow-hidden cursor-pointer"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-             <div className="p-8 bg-white/80 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 hover:shadow-xl hover:shadow-verdanza/5 transition-all group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-verdanza-yellow rounded-full flex items-center justify-center text-verdanza-dark mb-4 group-hover:scale-110 transition-transform">
-                  <Database size={28} />
+                <div className="absolute top-0 right-0 w-full h-3 bg-gradient-to-r from-verdanza-blue to-verdanza-dark" />
+                
+                <div className="relative z-10 flex flex-col items-center h-full justify-center">
+                    <h3 className="text-5xl font-display font-bold text-charcoal mb-6 group-hover:text-verdanza-blue transition-colors">Solution Two</h3>
+                    <p className="text-gray-600 text-xl leading-relaxed max-w-sm mb-8">
+                      This is a placeholder description for the second solution. Click here to read the full details.
+                    </p>
+
+                    {/* Call to action cue */}
+                    <div className="mt-auto flex items-center gap-2 text-verdanza-blue font-bold text-lg opacity-80 group-hover:opacity-100 group-hover:gap-4 transition-all">
+                        <span>Learn More</span>
+                        <ArrowRight size={24} />
+                    </div>
                 </div>
-                <h3 className="text-3xl font-display font-bold text-charcoal mb-3">Data-Driven Insights</h3>
-                <p className="text-gray-600">By analyzing user data, we offer customized solutions to help households reduce waste and save money effectively.</p>
-             </div>
+              </motion.div>
+            </Link>
           </div>
 
           {/* App Features Subsection */}
