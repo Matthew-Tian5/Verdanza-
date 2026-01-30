@@ -35,10 +35,10 @@ const Team: React.FC = () => {
           <div className="max-w-4xl mx-auto text-left space-y-6 text-gray-600 text-xl leading-relaxed bg-white/70 p-8 rounded-3xl backdrop-blur-md border border-verdanza/10 shadow-sm relative overflow-hidden">
              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-deep" />
             <p>
-              Verdaza Tech is an Ontario-based enterprise dedicated to reducing household food waste through data-driven insights, behavioral incentives, and education. Co-founded by Urvi and Helen, our mission is to create long-term, sustainable change by transforming how individuals and families perceive, manage, and value food in their homes.
+              Verdanza Tech is an Ontario-based enterprise dedicated to reducing household food waste through data-driven insights, behavioral incentives, and education. Co-founded by Urvi and Helen, our mission is to create long-term, sustainable change by transforming how individuals and families perceive, manage, and value food in their homes.
             </p>
             <p>
-              In addition to our technology-driven solutions, Verdaza Tech delivers interactive educational workshops for elementary schools designed to promote early behavioral change. These age-appropriate programs empower students with practical skills, environmental awareness, and positive food habits, encouraging them to become food-conscious decision-makers both at school and at home. By engaging children early, we help extend impact beyond the classroom and into households and communities.
+              In addition to our technology-driven solutions, Verdanza Tech delivers interactive educational workshops for elementary schools designed to promote early behavioral change. These age-appropriate programs empower students with practical skills, environmental awareness, and positive food habits, encouraging them to become food-conscious decision-makers both at school and at home. By engaging children early, we help extend impact beyond the classroom and into households and communities.
             </p>
           </div>
         </motion.div>

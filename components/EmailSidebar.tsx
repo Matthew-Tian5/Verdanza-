@@ -11,7 +11,7 @@ const EmailSidebar: React.FC = () => {
     const timer = setTimeout(() => {
       // Check if user has already dismissed it in session storage logic could go here
       setIsVisible(true);
-    }, 5000); // 5 seconds delay
+    }, 10000); // 5 seconds delay
 
     return () => clearTimeout(timer);
   }, []);
