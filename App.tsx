@@ -91,8 +91,8 @@ const App: React.FC = () => {
   // Initialize Smooth Scroll
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 0, // Reduced from 1.2 for less delay/float
+      easing: (t) => Math.min(5, 1.001 - Math.pow(5, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
