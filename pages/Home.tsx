@@ -4,6 +4,9 @@ import { ArrowRight, Target, ShoppingCart } from 'lucide-react';
 import ImpactCard from '../components/ImpactCard';
 import { Link } from 'react-router-dom';
 
+// Global variable to track if the preloader has shown in this session
+let hasLoadedOnce = false;
+
 const Home: React.FC = () => {
   const scrollToStats = () => {
     const element = document.getElementById('impact-stats');
@@ -45,12 +48,18 @@ const Home: React.FC = () => {
   const opacityOverlay = useTransform(heroScrollProgress, [0, 0.5], [0.8, 0.95]); // Fades to more white as you scroll
 
   // --- PRELOADER STATE ---
-  const [isLoading, setIsLoading] = useState(true);
+  // Initialize based on whether we've loaded before
+  const [isLoading, setIsLoading] = useState(!hasLoadedOnce);
   
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2400); 
-    return () => clearTimeout(timer);
-  }, []);
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        hasLoadedOnce = true; // Mark as loaded for future visits
+      }, 2400); 
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
 
   // --- ANIMATION VARIANTS ---
   const fadeInUp: Variants = {
@@ -126,7 +135,7 @@ const Home: React.FC = () => {
           1. LOADING SCREEN (WHITE BACKGROUND)
           -------------------------------------------------- */}
       <motion.div
-        initial={{ y: 0 }}
+        initial={{ y: isLoading ? 0 : "-100%" }} // Start hidden if not loading
         animate={{ y: isLoading ? 0 : "-100%" }}
         transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
         className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center text-verdanza-dark"
@@ -172,9 +181,7 @@ const Home: React.FC = () => {
                    {/* Original Background Image */}
                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2613&auto=format&fit=crop')] bg-cover bg-center" />
                    
-                   {/* UPDATED: White Blur Overlay 
-                       The opacity is high (0.85) to make it "slightly white" and readable.
-                   */}
+                   {/* UPDATED: White Blur Overlay */}
                    <motion.div 
                       style={{ opacity: opacityOverlay }}
                       className="absolute inset-0 bg-white/85 backdrop-blur-sm" 
@@ -239,7 +246,11 @@ const Home: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={!isLoading ? { opacity: 1, y: 0 } : { opacity: 0 }}
-                    transition={{ delay: 2.2, duration: 0.8 }}
+                    transition={{ 
+                      // Reduce delay if already loaded, otherwise wait for loader
+                      delay: hasLoadedOnce ? 0.2 : 2.2, 
+                      duration: 0.8 
+                    }}
                     className="mt-16"
                   >
                      <button 
@@ -257,7 +268,11 @@ const Home: React.FC = () => {
                   <motion.div 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 3.0, duration: 1 }}
+                    transition={{ 
+                      // Reduce delay if already loaded
+                      delay: hasLoadedOnce ? 0.5 : 3.0, 
+                      duration: 1 
+                    }}
                     className="absolute bottom-12 left-0 right-0 mx-auto text-center z-20"
                   >
                     <p className="text-gray-400 text-sm md:text-base animate-bounce font-medium tracking-widest uppercase inline-block">
