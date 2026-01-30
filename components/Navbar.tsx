@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from './MagneticButton';
+import verdanzaLogo from '../images/Verdanza logo clear.png';
 
 const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false); // Controls if navbar is shown
@@ -64,7 +65,7 @@ const Navbar: React.FC = () => {
             <NavLink to="/" className="flex items-center gap-1 group relative z-50">
                <MagneticButton>
                 <img 
-                    src="/images/Verdanza logo clear.png" 
+                    src={verdanzaLogo} 
                     alt="Verdanza Tech" 
                     className="h-[80px] w-auto object-contain"
                 />

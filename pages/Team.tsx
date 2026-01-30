@@ -1,18 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import urviImage from '../images/Urvi.JPG';
+import helenImage from '../images/HELEN.jpeg';
 
 const teamMembers = [
   {
     name: "Urvi Budhiraja",
     role: "Founder, CEO",
     quote: "We are creating long-term, sustainable change by transforming how individuals and families perceive, manage, and value food.",
-    image: "/images/Urvi.JPG" 
+    image: urviImage
   },
   {
     name: "Helen Sue",
     role: "Co-Founder, COO",
     quote: "By engaging children early, we help extend impact beyond the classroom and into households and communities.",
-    image: "/images/HELEN.jpeg" 
+    image: helenImage
   }
 ];
 
