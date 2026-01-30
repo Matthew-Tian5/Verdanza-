@@ -8,7 +8,7 @@ import {
   useMotionValue, 
   animate 
 } from 'framer-motion';
-import Lenis from '@studio-freight/lenis'; 
+import Lenis from 'lenis'; 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EmailSidebar from './components/EmailSidebar';
