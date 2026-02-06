@@ -1,13 +1,48 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate, Variants } from 'framer-motion';
 import { ArrowRight, Target, ShoppingCart } from 'lucide-react';
+import { Link, useNavigationType } from 'react-router-dom';
 import ImpactCard from '../components/ImpactCard';
-import { Link } from 'react-router-dom';
+
+// --- SDG Images from components folder ---
+import sgd12 from '../images/SGD12.png';
+import sgd8 from '../images/SGD8.png';
+import sgd13 from '../images/SGD13.png';
+import sgd17 from '../images/SGD17.png';
+
+// --- Partner Images ---
+import catPartner from '../images/catpartner.jpeg';
 
 // Global variable to track if the preloader has shown in this session
 let hasLoadedOnce = false;
 
 const Home: React.FC = () => {
+  // --- SCROLL RESTORATION LOGIC ---
+  const navType = useNavigationType();
+  const scrollKey = 'home_scroll_position';
+
+  // 1. Save scroll position whenever user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      sessionStorage.setItem(scrollKey, window.scrollY.toString());
+    };
+    // Add listener
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 2. Restore scroll position ONLY if returning (POP)
+  useEffect(() => {
+    if (navType === 'POP') {
+      const savedPosition = sessionStorage.getItem(scrollKey);
+      if (savedPosition) {
+        setTimeout(() => {
+          window.scrollTo(0, parseInt(savedPosition, 10));
+        }, 100);
+      }
+    }
+  }, [navType]);
+
   const scrollToStats = () => {
     const element = document.getElementById('impact-stats');
     if (element) {
@@ -32,7 +67,7 @@ const Home: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [mouseX, mouseY]);
 
-  // Subtle light glow effect (Greenish tint for the new light theme)
+  // Subtle light glow effect
   const glowBackground = useMotionTemplate`radial-gradient(circle at ${useTransform(smoothMouseX, [-0.5, 0.5], ["40%", "60%"])} ${useTransform(smoothMouseY, [-0.5, 0.5], ["40%", "60%"])}, rgba(6, 180, 139, 0.1), transparent 50%)`;
 
 
@@ -43,19 +78,18 @@ const Home: React.FC = () => {
     offset: ["start start", "end start"]
   });
 
-  const scaleHero = useTransform(heroScrollProgress, [0, 0.8], [1, 0.98]); // Subtle scale
+  const scaleHero = useTransform(heroScrollProgress, [0, 0.8], [1, 0.98]); 
   const borderRadiusHero = useTransform(heroScrollProgress, [0, 0.8], ["0px", "48px"]);
-  const opacityOverlay = useTransform(heroScrollProgress, [0, 0.5], [0.8, 0.95]); // Fades to more white as you scroll
+  const opacityOverlay = useTransform(heroScrollProgress, [0, 0.5], [0.8, 0.95]); 
 
   // --- PRELOADER STATE ---
-  // Initialize based on whether we've loaded before
   const [isLoading, setIsLoading] = useState(!hasLoadedOnce);
   
   useEffect(() => {
     if (isLoading) {
       const timer = setTimeout(() => {
         setIsLoading(false);
-        hasLoadedOnce = true; // Mark as loaded for future visits
+        hasLoadedOnce = true; 
       }, 2400); 
       return () => clearTimeout(timer);
     }
@@ -120,11 +154,11 @@ const Home: React.FC = () => {
 
   // --- PARTNER DATA ---
   const partners = [
-    { name: "Zero Hunger", img: "/images/ZeroHunger.jpg", desc: "UN SDG Goal 2" },
-    { name: "Partner 2", img: null, desc: "Community Partner" },
-    { name: "Partner 3", img: null, desc: "Tech Partner" },
-    { name: "Partner 4", img: null, desc: "Research Lab" },
-    { name: "Partner 5", img: null, desc: "Green Initiative" },
+    { name: "Zero Hunger", img: catPartner, desc: "budhiraja  " },
+    { name: "Partner 2", img: catPartner, desc: "Strategic Partner" },
+    { name: "Partner 3", img: catPartner, desc: "Tech Partner" },
+    { name: "Partner 4", img: catPartner, desc: "Research Lab" },
+    { name: "Partner 5", img: catPartner, desc: "Green Initiative" },
   ];
   const seamlessPartners = [...partners, ...partners];
 
@@ -132,10 +166,10 @@ const Home: React.FC = () => {
   return (
     <>
       {/* --------------------------------------------------
-          1. LOADING SCREEN (WHITE BACKGROUND)
+          1. LOADING SCREEN
           -------------------------------------------------- */}
       <motion.div
-        initial={{ y: isLoading ? 0 : "-100%" }} // Start hidden if not loading
+        initial={{ y: isLoading ? 0 : "-100%" }} 
         animate={{ y: isLoading ? 0 : "-100%" }}
         transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
         className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center text-verdanza-dark"
@@ -164,7 +198,7 @@ const Home: React.FC = () => {
       <div className="w-full relative bg-white selection:bg-verdanza selection:text-white">
         
         {/* --------------------------------------------------
-            2. HERO SECTION (UPDATED COLORS & BLUR)
+            2. HERO SECTION
             -------------------------------------------------- */}
         <div ref={heroRef} className="h-[120vh] relative z-20 bg-white">
           <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-white">
@@ -178,26 +212,22 @@ const Home: React.FC = () => {
              >
                 {/* Background Layer */}
                 <div className="absolute inset-0">
-                   {/* Original Background Image */}
                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2613&auto=format&fit=crop')] bg-cover bg-center" />
                    
-                   {/* UPDATED: White Blur Overlay */}
                    <motion.div 
                       style={{ opacity: opacityOverlay }}
                       className="absolute inset-0 bg-white/85 backdrop-blur-sm" 
                    />
 
-                   {/* Mouse Glow Effect Overlay (Subtle Green) */}
                    <motion.div 
                       style={{ background: glowBackground }}
                       className="absolute inset-0 mix-blend-multiply opacity-30 pointer-events-none"
                    />
                 </div>
 
-                {/* Centered Content - Recreating the Logo Layout */}
+                {/* Centered Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-30">
                   
-                  {/* The Logo Lockup */}
                   <motion.div 
                     className="flex items-center gap-6 md:gap-10 transform scale-75 md:scale-100 lg:scale-125"
                     variants={logoContainer}
@@ -205,7 +235,7 @@ const Home: React.FC = () => {
                     animate={!isLoading ? "visible" : "hidden"}
                   >
                     
-                    {/* Left Side: Verdanza / Tech (GREEN) */}
+                    {/* Left Side: Verdanza / Tech */}
                     <div className="flex flex-col items-end">
                       <motion.span 
                         variants={logoItem} 
@@ -221,13 +251,13 @@ const Home: React.FC = () => {
                       </motion.span>
                     </div>
 
-                    {/* Middle: Divider Line (BLACK) */}
+                    {/* Middle: Divider Line */}
                     <motion.div 
                       variants={lineGrow}
                       className="w-[3px] h-24 md:h-32 bg-charcoal origin-top"
                     />
 
-                    {/* Right Side: World / Without / Waste (BLACK) */}
+                    {/* Right Side: World / Without / Waste */}
                     <div className="flex flex-col items-start justify-center gap-0 md:gap-1 text-left">
                       <motion.span variants={sloganItem} className="font-sans text-2xl md:text-4xl text-charcoal font-normal leading-none">
                         World
@@ -242,12 +272,11 @@ const Home: React.FC = () => {
 
                   </motion.div>
 
-                  {/* CTA Button (Updated for Light Theme) */}
+                  {/* CTA Button */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={!isLoading ? { opacity: 1, y: 0 } : { opacity: 0 }}
                     transition={{ 
-                      // Reduce delay if already loaded, otherwise wait for loader
                       delay: hasLoadedOnce ? 0.2 : 2.2, 
                       duration: 0.8 
                     }}
@@ -269,7 +298,6 @@ const Home: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ 
-                      // Reduce delay if already loaded
                       delay: hasLoadedOnce ? 0.5 : 3.0, 
                       duration: 1 
                     }}
@@ -288,7 +316,6 @@ const Home: React.FC = () => {
         {/* --------------------------------------------------
             3. THE PROBLEM SECTION
             -------------------------------------------------- */}
-        {/* Removed negative margin to prevent overlap issues */}
         <motion.section 
           id="problem" 
           initial="hidden"
@@ -455,32 +482,57 @@ const Home: React.FC = () => {
                Verdanza Tech aligns with the United Nations Sustainable Development Goals (SDGs) to create a meaningful impact.
              </p>
 
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza">
-                  <div className="w-16 h-16 mx-auto bg-[#BF8B2E] rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-4 shadow-lg shadow-[#BF8B2E]/20">12</div>
-                  <h4 className="font-bold text-charcoal mb-2 font-display">Responsible Consumption</h4>
-                  <p className="text-xs text-gray-500">Encouraging sustainable food management at the household level.</p>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+               
+               {/* SDG 12 */}
+               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza flex flex-col items-center">
+                  <img 
+                    src={sgd12}
+                    alt="Responsible Consumption" 
+                    className="h-32 w-auto object-contain rounded-xl mb-4 shadow-md"
+                  />
+                  <h4 className="font-bold text-charcoal text-xl mb-3 font-display">Responsible Consumption</h4>
+                  <p className="text-base text-gray-600 leading-relaxed">Encouraging sustainable food management at the household level.</p>
                </div>
-               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza">
-                  <div className="w-16 h-16 mx-auto bg-[#A21942] rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-4 shadow-lg shadow-[#A21942]/20">8</div>
-                  <h4 className="font-bold text-charcoal mb-2 font-display">Decent Work & Growth</h4>
-                  <p className="text-xs text-gray-500">Promoting cost savings for families through reduced waste.</p>
+
+               {/* SDG 8 */}
+               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza flex flex-col items-center">
+                  <img 
+                    src={sgd8}
+                    alt="Decent Work & Growth" 
+                    className="h-32 w-auto object-contain rounded-xl mb-4 shadow-md"
+                  />
+                  <h4 className="font-bold text-charcoal text-xl mb-3 font-display">Decent Work & Growth</h4>
+                  <p className="text-base text-gray-600 leading-relaxed">Promoting cost savings for families through reduced waste.</p>
                </div>
-               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza">
-                  <div className="w-16 h-16 mx-auto bg-[#3F7E44] rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-4 shadow-lg shadow-[#3F7E44]/20">13</div>
-                  <h4 className="font-bold text-charcoal mb-2 font-display">Climate Action</h4>
-                  <p className="text-xs text-gray-500">Reducing food waste lowers methane emissions and mitigates climate impact.</p>
+
+               {/* SDG 13 */}
+               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza flex flex-col items-center">
+                  <img 
+                    src={sgd13} 
+                    alt="Climate Action" 
+                    className="h-32 w-auto object-contain rounded-xl mb-4 shadow-md"
+                  />
+                  <h4 className="font-bold text-charcoal text-xl mb-3 font-display">Climate Action</h4>
+                  <p className="text-base text-gray-600 leading-relaxed">Reducing food waste lowers methane emissions and mitigates climate impact.</p>
                </div>
-               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza">
-                  <div className="w-16 h-16 mx-auto bg-[#19486A] rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-4 shadow-lg shadow-[#19486A]/20">17</div>
-                  <h4 className="font-bold text-charcoal mb-2 font-display">Partnerships</h4>
-                  <p className="text-xs text-gray-500">Collaborating with schools, businesses, and policymakers to scale solutions.</p>
+
+               {/* SDG 17 */}
+               <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300 border border-white/50 hover:border-verdanza flex flex-col items-center">
+                  <img 
+                    src={sgd17} 
+                    alt="Partnerships" 
+                    className="h-32 w-auto object-contain rounded-xl mb-4 shadow-md"
+                  />
+                  <h4 className="font-bold text-charcoal text-xl mb-3 font-display">Partnerships</h4>
+                  <p className="text-base text-gray-600 leading-relaxed">Collaborating with schools, businesses, and policymakers to scale solutions.</p>
                </div>
+
              </div>
           </div>
         </motion.section>
 
-        {/* Partners Section - SLIDING CAROUSEL (Limited Width) */}
+        {/* Partners Section - SLIDING CAROUSEL */}
         <motion.section 
           initial="hidden"
           whileInView="visible"
@@ -510,21 +562,22 @@ const Home: React.FC = () => {
                 {seamlessPartners.map((partner, index) => (
                   <div 
                     key={index} 
-                    className="flex-shrink-0 w-72 bg-white backdrop-blur-sm p-8 rounded-3xl border border-gray-100 flex flex-col items-center justify-center text-center hover:bg-white transition-colors hover:shadow-lg group"
+                    className="flex-shrink-0 w-80 bg-white backdrop-blur-sm p-8 rounded-3xl border border-gray-100 flex flex-col items-center justify-center text-center hover:bg-white transition-colors hover:shadow-lg group"
                   >
-                    <div className="w-32 h-32 bg-white rounded-full shadow-sm flex items-center justify-center p-4 mb-6 border border-gray-100 overflow-hidden group-hover:scale-105 transition-transform">
+                    {/* UPDATED IMAGE CONTAINER: Removed p-4, Changed to object-cover */}
+                    <div className="w-40 h-40 bg-white rounded-full shadow-sm flex items-center justify-center mb-6 border border-gray-100 overflow-hidden group-hover:scale-105 transition-transform">
                       {partner.img ? (
                         <img 
                           src={partner.img} 
                           alt={partner.name} 
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover" 
                         />
                       ) : (
                          <span className="text-verdanza font-bold text-xl">{partner.name.charAt(0)}</span>
                       )}
                     </div>
-                    <h4 className="font-bold font-display text-charcoal text-xl mb-1">{partner.name}</h4>
-                    <p className="text-sm text-gray-500 font-light">{partner.desc}</p>
+                    <h4 className="font-bold font-display text-charcoal text-2xl mb-1">{partner.name}</h4>
+                    <p className="text-base text-gray-500 font-light">{partner.desc}</p>
                   </div>
                 ))}
               </motion.div>

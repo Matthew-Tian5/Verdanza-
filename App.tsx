@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { 
   motion, 
   useScroll, 
@@ -12,7 +12,6 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EmailSidebar from './components/EmailSidebar';
-// Removed CustomCursor import
 import Home from './pages/Home';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
@@ -21,15 +20,28 @@ import SolutionOne from './pages/SolutionOne';
 import SolutionTwo from './pages/SolutionTwo';
 import backgroundImage from './images/Opening Background.jpg';
 
-const ScrollToTop = () => {
+// Handles scrolling logic via Lenis and Router
+const ScrollManager: React.FC<{ lenis: Lenis | null }> = ({ lenis }) => {
   const { pathname } = useLocation();
+  const navType = useNavigationType();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // If navigating to a new page (PUSH) or Replacing, force scroll to top
+    // We ignore 'POP' (Back button) so the browser/manual logic can restore position
+    if (navType !== 'POP') {
+      // 1. Force native scroll
+      window.scrollTo(0, 0);
+      
+      // 2. Force Lenis scroll (critical for smooth scroll sync)
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
+      }
+    }
+  }, [pathname, navType, lenis]);
+  
   return null;
 };
 
-// Extracted Background Component to use Router Context
 const BackgroundLayers: React.FC = () => {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
@@ -88,35 +100,38 @@ const BackgroundLayers: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  // Initialize Smooth Scroll
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+
+  // Initialize Smooth Scroll (Lenis)
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 0, // Reduced from 1.2 for less delay/float
+    const newLenis = new Lenis({
+      duration: 0, 
       easing: (t) => Math.min(5, 1.001 - Math.pow(5, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
     });
 
+    setLenis(newLenis);
+
     function raf(time: number) {
-      lenis.raf(time);
+      newLenis.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy();
+      newLenis.destroy();
     };
   }, []);
 
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollManager lenis={lenis} />
       
       <BackgroundLayers />
       
-      {/* UI Layer - Removed cursor-none class */}
       <div className="relative z-30 min-h-screen flex flex-col font-sans text-charcoal selection:bg-verdanza selection:text-charcoal">
         <Navbar />
         

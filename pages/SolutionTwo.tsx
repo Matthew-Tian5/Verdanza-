@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// Changed Link to useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const SolutionTwo: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen pt-24 pb-12 px-6 flex items-center justify-center relative z-10">
       {/* Background shape for the page underneath */}
@@ -20,14 +23,14 @@ const SolutionTwo: React.FC = () => {
         {/* Decorative gradient bar at the top inside the box */}
         <div className="absolute top-0 right-0 w-full h-3 bg-gradient-to-r from-verdanza-blue to-verdanza-dark" />
 
-        {/* X Button to Close */}
-        <Link
-          to="/"
+        {/* X Button to Close - Updated to Navigate Back */}
+        <button
+          onClick={() => navigate(-1)}
           className="absolute top-8 right-8 z-20 p-3 rounded-full bg-gray-100/80 hover:bg-gray-200 text-charcoal transition-all hover:rotate-90 hover:shadow-md"
           aria-label="Close"
         >
           <X size={32} />
-        </Link>
+        </button>
 
         {/* Box Content - Aligned Right for variety */}
         <div className="p-10 md:p-16 lg:p-20 overflow-y-auto flex flex-col items-end text-right">
