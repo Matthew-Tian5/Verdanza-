@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
       // ADD THIS LINE: Set base to your repository name with leading/trailing slashes
-      base: 'Verdanza-/', 
+      base: '/', 
       server: {
         port: 3000,
         host: '0.0.0.0',
