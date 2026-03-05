@@ -375,17 +375,17 @@ const Home: React.FC = () => {
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, translateY: -5 }}
                   transition={{ duration: 0.3 }}
-                  className="h-[600px] p-8 bg-white backdrop-blur-md rounded-[3rem] shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center hover:shadow-2xl hover:shadow-verdanza/20 relative overflow-hidden cursor-pointer"
+                  className="h-[400px] p-6 bg-white backdrop-blur-md rounded-[3rem] shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center hover:shadow-2xl hover:shadow-verdanza/20 relative overflow-hidden cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-100" />
                   <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-verdanza to-verdanza-light" />
                   
-                  <div className="relative z-10 flex flex-col items-center h-full justify-center">
-                      <h3 className="text-5xl font-display font-bold text-charcoal mb-6 group-hover:text-verdanza transition-colors">Solution One</h3>
-                      <p className="text-gray-600 text-xl leading-relaxed max-w-sm mb-8">
-                        This is a placeholder description for the first solution. Click here to read the full details.
+                  <div className="relative z-10 flex flex-col items-center justify-center gap-3">
+                      <h3 className="text-5xl font-display font-bold text-charcoal group-hover:text-verdanza transition-colors">App Sustain</h3>
+                      <p className="text-gray-600 text-lg leading-relaxed max-w-sm">
+                        An AI-powered app designed to track food consumption, provide waste reduction tips, and incentivize sustainable behaviors through personalized recommendations.
                       </p>
-                      <div className="mt-auto flex items-center gap-2 text-verdanza font-bold text-lg opacity-80 group-hover:opacity-100 group-hover:gap-4 transition-all">
+                      <div className="flex items-center gap-2 text-verdanza font-bold text-base opacity-80 group-hover:opacity-100 group-hover:gap-4 transition-all mt-2">
                           <span>Learn More</span>
                           <ArrowRight size={24} />
                       </div>
@@ -399,17 +399,17 @@ const Home: React.FC = () => {
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, translateY: -5 }}
                   transition={{ duration: 0.3 }}
-                  className="h-[600px] p-8 bg-white backdrop-blur-md rounded-[3rem] shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center hover:shadow-2xl hover:shadow-verdanza-blue/20 relative overflow-hidden cursor-pointer"
+                  className="h-[400px] p-6 bg-white backdrop-blur-md rounded-[3rem] shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center hover:shadow-2xl hover:shadow-verdanza-blue/20 relative overflow-hidden cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-100" />
                   <div className="absolute top-0 right-0 w-full h-3 bg-gradient-to-r from-verdanza-blue to-verdanza-dark" />
                   
-                  <div className="relative z-10 flex flex-col items-center h-full justify-center">
-                      <h3 className="text-5xl font-display font-bold text-charcoal mb-6 group-hover:text-verdanza-blue transition-colors">Solution Two</h3>
-                      <p className="text-gray-600 text-xl leading-relaxed max-w-sm mb-8">
-                        This is a placeholder description for the second solution. Click here to read the full details.
+                  <div className="relative z-10 flex flex-col items-center justify-center gap-3">
+                      <h3 className="text-5xl font-display font-bold text-charcoal group-hover:text-verdanza-blue transition-colors">Community Workshops</h3>
+                      <p className="text-gray-600 text-lg leading-relaxed max-w-sm">
+                        Interactive workshops for Grades 2–9 that promote sustainable habits through education and early childhood learning to instill lifelong behaviours.
                       </p>
-                      <div className="mt-auto flex items-center gap-2 text-verdanza-blue font-bold text-lg opacity-80 group-hover:opacity-100 group-hover:gap-4 transition-all">
+                      <div className="flex items-center gap-2 text-verdanza-blue font-bold text-base opacity-80 group-hover:opacity-100 group-hover:gap-4 transition-all mt-2">
                           <span>Learn More</span>
                           <ArrowRight size={24} />
                       </div>

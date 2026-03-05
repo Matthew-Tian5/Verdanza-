@@ -39,31 +39,39 @@ const SolutionTwo: React.FC = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold text-charcoal mb-10">
-            Solution Two Title
+            Community Workshops
           </h1>
 
           <div className="prose prose-lg md:prose-xl text-gray-600 leading-relaxed max-w-4xl flex flex-col items-end">
             <p className="mb-8 text-2xl font-light text-gray-500">
-              This is a larger description for Solution Two. It focuses on the community aspects, educational programs, or broader impact strategies.
+              We promote sustainable habits through education and community engagement, with a focus on early childhood learning to instill lifelong behaviours.
             </p>
             <p className="mb-8">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Through fun, interactive workshops, we teach students in Grades 2–9 about food waste and empower them to become changemakers in their homes and communities. Children have a powerful influence on household habits. By educating them early, we create ripple effects that extend into families, communities, and the future.
             </p>
             
             <div className="bg-white/50 rounded-2xl p-8 border border-white/50 shadow-sm my-10 w-full text-left">
-              <h3 className="text-2xl font-bold text-charcoal mb-6 font-display">Program Goals</h3>
+              <h3 className="text-2xl font-bold text-charcoal mb-6 font-display">Key Reasons for Our Workshops</h3>
               <ul className="space-y-4 list-none pl-0">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-verdanza-blue mt-2.5" />
-                  <span>Goal one focused on sustainability metrics and tracking.</span>
+                  <span><strong>Behavioral Change at an Early Age</strong> – Research shows that habits formed in early childhood tend to persist into adulthood. Teaching kids to value food and reduce waste ensures long-term impact.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-verdanza-blue mt-2.5" />
-                  <span>Goal two focused on deep community engagement and workshops.</span>
+                  <span><strong>Develop Sustainable Habits Early</strong> – Teaching kids to respect food ensures they grow up mindful of waste.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-verdanza-blue mt-2.5" />
-                  <span>Goal three focused on long-term behavioral change in households.</span>
+                  <span><strong>Interactive and Engaging Learning</strong> – Our workshops use hands-on activities, storytelling, and games to make learning fun and impactful.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-verdanza-blue mt-2.5" />
+                  <span><strong>Empowering Future Changemakers</strong> – Children influence their households. Educating them means indirectly educating families, leading to broader community impact.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-verdanza-blue mt-2.5" />
+                  <span><strong>Addressing a Global Issue Locally</strong> – Food waste is a significant problem worldwide, and Ontario is no exception. Teaching kids about sustainability fosters a generation that prioritizes mindful consumption.</span>
                 </li>
               </ul>
             </div>

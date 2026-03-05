@@ -39,15 +39,12 @@ const SolutionOne: React.FC = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold text-charcoal mb-10">
-            Solution One Title
+            App Sustain
           </h1>
 
           <div className="prose prose-lg md:prose-xl text-gray-600 leading-relaxed max-w-4xl">
             <p className="mb-8 text-2xl font-light text-gray-500">
-              This is a larger description for Solution One. It provides in-depth details about the technology, methodology, and impact of this specific initiative, presented in a focused, card-like view.
-            </p>
-            <p className="mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Sustain is an AI-powered app designed to track food consumption, provide waste reduction tips, and incentivize sustainable behaviors. The app leverages AI to personalize recommendations and promote smarter food management.
             </p>
             
             <div className="bg-white/50 rounded-2xl p-8 border border-white/50 shadow-sm my-10">
@@ -55,15 +52,27 @@ const SolutionOne: React.FC = () => {
               <ul className="space-y-4 list-none pl-0">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-verdanza mt-2.5" />
-                  <span>Feature point one describing a key benefit or technological advantage.</span>
+                  <span>AI-Generated Meal Plans</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-verdanza mt-2.5" />
-                  <span>Feature point two describing the user impact and sustainability metrics.</span>
+                  <span>Dynamic Recipe Curation</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-verdanza mt-2.5" />
-                  <span>Feature point three explaining the integration with household habits.</span>
+                  <span>"Peelie" AI Assistant for Food Storage</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-verdanza mt-2.5" />
+                  <span>Advanced Food Safety Education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-verdanza mt-2.5" />
+                  <span>Grocery List Tracking</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-verdanza mt-2.5" />
+                  <span>Ingredients Tracking</span>
                 </li>
               </ul>
             </div>
